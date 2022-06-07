@@ -1,10 +1,6 @@
-# Ethernaut challenge (brownie)
-
-Hi, in this repo I will learn how to use brownie by doing the [Ethernaut challenge from OpenZeppelin.](https://ethernaut.openzeppelin.com/)
-
 # Ethernaut solutions
 
-In this repo I will write all the solutions to the [Ethernaut CTF](https://ethernaut.openzeppelin.com/). I solved the challenges locally using brownie. 
+In this repo I will write all the solutions to the [Ethernaut CTF](https://ethernaut.openzeppelin.com/). I solved the challenges locally using brownie. Then did it on chain through brownie as well using the rinkeby network through the Infura api.
 
 ## My local environment setup
 
@@ -58,7 +54,7 @@ brownie networks add development rinkeby-fork cmd=ganache host=http://127.0.0.1 
 
 You can either use the infura or alchemy APIs, I personally used alchemy. I set the `ALCHEMY_API_KEY_RINKEBY` environment variable on my machine, but you can do so in the `.env` file by modifying the `.env.template` file and removing the `.template` part of the filename.
 
-6. Then run whatever script you want to run using this local forked network
+6. Then run whatever script you want to run using this local forked network:
 
 ```
 brownie run <script> --network rinkeby-fork
