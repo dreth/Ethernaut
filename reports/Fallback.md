@@ -10,7 +10,7 @@ The fallback challenge has the following objectives:
 
 There's two ways to become owner in this contract:
 
-* By contributing a total amount larger than the contributions of the deployer, which are a total of 1000 ETH deposited in individual transactions of less than 0.001 ETH. It would take ~1000002 transactions depositing 0.000999999 ETH every time.
+* By contributing (using `contribute()`) a total amount larger than the contributions of the deployer, which are a total of 1000 ETH deposited in individual transactions of less than 0.001 ETH. It would take 1000001 to 1000002 transactions depositing 0.000999999 ETH every time.
 
 * By performing the following steps:
 

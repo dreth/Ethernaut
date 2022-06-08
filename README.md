@@ -59,3 +59,10 @@ You can either use the infura or alchemy APIs, I personally used alchemy. I set 
 ```
 brownie run <script> --network rinkeby-fork
 ```
+
+## My solutions
+
+For my solution reports/writeups are in the markdown documents under `/reports`. You can view whichever you want by clicking here:
+
+1. [HelloEthernaut](https://github.com/dreth/Ethernaut/blob/main/reports/HelloEthernaut.md)
+2. [Fallback](https://github.com/dreth/Ethernaut/blob/main/reports/Fallback.md)
