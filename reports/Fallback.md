@@ -1,6 +1,6 @@
 # Fallback
 
-The fallback challenge has the following objectives:
+## Objectives
 
 1. you claim ownership of the contract
 
@@ -28,7 +28,7 @@ There's two ways to become owner in this contract:
 fallback.contribute(_from | {'value':0.0009*1e18})
 ```
 
-Tx hash: https://rinkeby.etherscan.io/tx/0x90f854f08883f751c631d7829ccc0ee0386cfc42ee561fb2e0f088680e369f6f
+Block explorer: https://rinkeby.etherscan.io/tx/0x90f854f08883f751c631d7829ccc0ee0386cfc42ee561fb2e0f088680e369f6f
 
 1. Send the contract 0.0009 ETH
 
@@ -36,7 +36,7 @@ Tx hash: https://rinkeby.etherscan.io/tx/0x90f854f08883f751c631d7829ccc0ee0386cf
 acc.transfer(fallback, 0.0009*1e18)
 ```
 
-Tx hash: https://rinkeby.etherscan.io/tx/0x45d02df610de828edff7ee0b80bfee2fa4ac1057ff6bc78ef1c7a2c0875bd26f
+Block explorer: https://rinkeby.etherscan.io/tx/0x45d02df610de828edff7ee0b80bfee2fa4ac1057ff6bc78ef1c7a2c0875bd26f
 
 2. Call the `withdraw()` function
 
@@ -44,8 +44,8 @@ Tx hash: https://rinkeby.etherscan.io/tx/0x45d02df610de828edff7ee0b80bfee2fa4ac1
 fallback.withdraw(_from)
 ```
 
-Tx hash: https://rinkeby.etherscan.io/tx/0xbbe13aecf3cf7793f032a845bdff886eae1a77d7bc95081b90113cd73a07852a
+Block explorer: https://rinkeby.etherscan.io/tx/0xbbe13aecf3cf7793f032a845bdff886eae1a77d7bc95081b90113cd73a07852a
 
 ### Submission transaction
 
-Tx hash: https://rinkeby.etherscan.io/tx/0x27e316034f676e3c00c0de9159e12d7441cca833d9a7bf29b366ef835c7dbb86
+Block explorer: https://rinkeby.etherscan.io/tx/0x27e316034f676e3c00c0de9159e12d7441cca833d9a7bf29b366ef835c7dbb86

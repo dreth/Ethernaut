@@ -1,6 +1,6 @@
 # Fallout
 
-The fallout challenge has the following sole objective:
+## Objectives
 
 1. you claim ownership of the contract
 
@@ -18,9 +18,9 @@ To solve this, all we have to do is call the `Fal1out()` function.
 fallout.Fal1out(_from | {'value':0})
 ```
 
-Tx hash: https://rinkeby.etherscan.io/tx/0xbfc58f91420dd07d7fd61238a5bf240a8cda8660462cf4c7527781a64eba7818
+Block explorer: https://rinkeby.etherscan.io/tx/0xbfc58f91420dd07d7fd61238a5bf240a8cda8660462cf4c7527781a64eba7818
 
 
 ### Submission transaction
 
-Tx hash: https://rinkeby.etherscan.io/tx/0x1e38a8643d2daf32da8841c457d09e68ce397929dc5456cbf8277606e33d8fa5
+Block explorer: https://rinkeby.etherscan.io/tx/0x1e38a8643d2daf32da8841c457d09e68ce397929dc5456cbf8277606e33d8fa5

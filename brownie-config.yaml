@@ -8,3 +8,7 @@ compiler:
       - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0'
 
 dotenv: .env
+
+networks:
+  live:
+    gas_limit: "1000000"

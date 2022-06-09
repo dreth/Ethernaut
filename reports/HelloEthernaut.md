@@ -6,4 +6,4 @@ This is simply an introductory lesson to understand, conceptually, how the Ether
 
 ### Submission transaction
 
-Tx hash: https://rinkeby.etherscan.io/tx/0x2b290d63d3cf40543bd01923b495c812e6b830fb624769e650d7c48ad7999fde
+Block explorer: https://rinkeby.etherscan.io/tx/0x2b290d63d3cf40543bd01923b495c812e6b830fb624769e650d7c48ad7999fde
