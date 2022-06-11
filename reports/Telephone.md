@@ -1,4 +1,4 @@
-# CoinFlip
+# Telephone
 
 ## Objectives
 
