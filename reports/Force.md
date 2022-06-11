@@ -52,6 +52,13 @@ forceattack.forceEtherIntoAddress(force.address)
 
 Block explorer: https://rinkeby.etherscan.io/tx/0x936c5b1b5131c445f80eb7e38c1d1c766e8134a06c07613b07a7524f33da0faa
 
+4. Confirm that the contract balance is > 0
+
+```python
+balance_assertion = force.balance() > 0
+print(f'Current balance of the contract is {force.balance()}, is this greater than zero: {balance_assertion}')
+```
+
 ### Submission transaction
 
 Block explorer: https://rinkeby.etherscan.io/tx/0x1e38a8643d2daf32da8841c457d09e68ce397929dc5456cbf8277606e33d8fa5
