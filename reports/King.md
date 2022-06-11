@@ -6,7 +6,7 @@ When you submit the instance back to the level, the level is going to reclaim ki
 
 ## Solution
 
-
+Here all we have to do is have a contract become `king` as opposed to an ordinary address. So we create a contract that performs a low level call to send the funds (because `transfer` would run out of gas) to the King contract. The amount to send has to be greater than or equal to 0.001 ETH (1e15 wei). Once the contract takes over as king, no other contract or address can take over.
 
 ## How I did it
 
@@ -16,7 +16,7 @@ When you submit the instance back to the level, the level is going to reclaim ki
 kingattack = KingAttack.deploy(EthernautInstances['king'], _from)
 ```
 
-2. Call the `becomeKing()` function, while sending enough funds to take over the contract (~1e15 wei = 0.001 ether) defined in the contract as follows:
+2. Call the `becomeKing()` function, while sending enough funds to take over the contract (1e15 wei = 0.001 ether) defined in the contract as follows:
 
 ```cs
 function becomeKing() external payable {
