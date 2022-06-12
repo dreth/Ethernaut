@@ -77,7 +77,7 @@ wins_assertion = coinflip.consecutiveWins() == 10
 print(wins_assertion)
 ```
 
-## Submission transaction
+### Submission transaction
 
 Block explorer: https://rinkeby.etherscan.io/tx/0x137421ce33d24463170860b734fc5fe256c35479e0d53075e491c9112ad7dd34
 

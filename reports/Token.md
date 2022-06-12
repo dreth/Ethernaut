@@ -53,6 +53,6 @@ print(f'Does address {acc.address} have more than 20 tokens?: {amount_assertion}
 ```
 
 
-## Submission transaction
+### Submission transaction
 
 Block explorer: https://rinkeby.etherscan.io/tx/0x50dacc40fa0b3e919a98709ae45ac9efcb9c6d4bb2ec5248176b0aefa158c58a

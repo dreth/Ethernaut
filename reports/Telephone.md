@@ -45,6 +45,6 @@ owner_assertion = telephone.owner() == acc.address
 print(f'The account owner matches my address: {owner_assertion}')
 ```
 
-## Submission transaction
+### Submission transaction
 
 Block explorer: https://rinkeby.etherscan.io/tx/0x7c11bb8f65a6117b8f2e17622f3bbdcc81214b8d5daafa41bbbeb54dfc60e4b5

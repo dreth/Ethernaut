@@ -4,3 +4,4 @@ __pycache__
 .hypothesis/
 build/
 node_modules
+/contracts/other

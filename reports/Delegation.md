@@ -33,6 +33,6 @@ owner_assertion = delegation.owner() == acc.address
 print(f'The owner of the contract is {acc.address}, therefore the assertion is {owner_assertion}')
 ```
 
-## Submission transaction
+### Submission transaction
 
 Block explorer: https://rinkeby.etherscan.io/tx/0x69562563ddeb59bc8beeb241403bf8406fd9bdb7e4534f940052012f01f228ea
