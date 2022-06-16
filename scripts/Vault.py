@@ -1,6 +1,6 @@
-from scripts.context import *
-from scripts.account import _from, acc
-from scripts.web3 import web3
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
+from scripts.helper.web3 import web3
 from brownie import Vault
 
 ##########################################
@@ -10,7 +10,7 @@ from brownie import Vault
 # solve the challenge
 def solve_challenge():
     # load challenge
-    vault = load_challenge(contract_name=Vault, instance_key='vault')
+    vault = load_challenge(ContractObject=Vault, instance_key='vault')
 
     # look at the contract storage's 2nd slot
     # to see the value of the 2nd state variable `password`

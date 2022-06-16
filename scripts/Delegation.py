@@ -1,6 +1,6 @@
-from scripts.context import *
-from scripts.account import _from, acc
-from scripts.web3 import web3
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
+from scripts.helper.web3 import web3
 from brownie import Delegation
 
 ##########################################
@@ -10,7 +10,7 @@ from brownie import Delegation
 # solve the challenge
 def solve_challenge():
     # load challenge
-    delegation = load_challenge(contract_name=Delegation, instance_key='delegation')
+    delegation = load_challenge(ContractObject=Delegation, instance_key='delegation')
 
     # get the first 4 bytes of the 'pwn()' function hash
     # in order to pass it through msg.data

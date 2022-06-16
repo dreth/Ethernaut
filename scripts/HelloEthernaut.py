@@ -1,11 +1,11 @@
-from scripts.context import *
-from scripts.account import _from, acc
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
 from brownie import Instance
 
 # solve the challenge
 def solve_challenge():
     # load challenge
-    HelloEthernaut = load_challenge(contract_name=Instance, instance_key='hello')
+    HelloEthernaut = load_challenge(ContractObject=Instance, instance_key='hello')
 
     # run methods
     print(HelloEthernaut.info1(_from))

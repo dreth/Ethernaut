@@ -1,9 +1,9 @@
 from scripts.helper.context import *
 from scripts.helper.account import _from, acc
-from brownie import ContractName
+from brownie import GatekeeperTwo
 
 ##########################################
-# Goal of the exercise
+# Register as an entrant to pass this level.
 #########################################
 
 # test locally
@@ -14,9 +14,9 @@ def deploy_locally(ContractObject, from_account, constructor_params={}):
 def solve_challenge(locally=False):
     if not locally == False:
         # load challenge
-        contract_name = load_challenge(ContractObject=ContractName, instance_key='contract_name')
+        gatekeeper = load_challenge(ContractObject=GatekeeperTwo, instance_key='gatekeeper2')
     else:
-        contract_name = deploy_locally(ContractObject=ContractName, from_account=_from)
+        gatekeeper = deploy_locally(ContractObject=GatekeeperTwo, from_account=_from)
 
 def main():
     solve_challenge()

@@ -1,7 +1,7 @@
 from turtle import circle
-from scripts.context import *
-from scripts.account import _from, acc
-from scripts.web3 import web3
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
+from scripts.helper.web3 import web3
 from brownie import CoinFlip
 
 #########################################
@@ -15,7 +15,7 @@ def get_block_value(block_number):
 # solve the challenge
 def solve_challenge():
     # load challenge
-    coinflip = load_challenge(contract_name=CoinFlip, instance_key='coinflip')
+    coinflip = load_challenge(ContractObject=CoinFlip, instance_key='coinflip')
 
     # define the factor variable used by the contract
     factor = 57896044618658097711785492504343953926634992332820282019728792003956564819968

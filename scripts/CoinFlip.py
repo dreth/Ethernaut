@@ -1,6 +1,6 @@
 from turtle import circle
-from scripts.context import *
-from scripts.account import _from, acc
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
 from brownie import CoinFlip, CoinFlipAttack
 
 #########################################
@@ -10,7 +10,7 @@ from brownie import CoinFlip, CoinFlipAttack
 # solve the challenge
 def solve_challenge():
     # load challenge
-    coinflip = load_challenge(contract_name=CoinFlip, instance_key='coinflip')
+    coinflip = load_challenge(ContractObject=CoinFlip, instance_key='coinflip')
     coinflipattack = CoinFlipAttack.deploy(_from)
 
     # set the instance of coinflip in coinflipattack 

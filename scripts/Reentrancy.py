@@ -1,5 +1,5 @@
-from scripts.context import *
-from scripts.account import _from, acc
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
 from brownie import Reentrance, ReentrancyAttack, accounts
 
 ##########################################
@@ -9,7 +9,7 @@ from brownie import Reentrance, ReentrancyAttack, accounts
 # solve the challenge
 def solve_challenge():
     # load challenge
-    reentrancy = load_challenge(contract_name=Reentrance, instance_key='reentrancy')
+    reentrancy = load_challenge(ContractObject=Reentrance, instance_key='reentrancy')
     reentrancyattack = ReentrancyAttack.deploy(EthernautInstances['reentrancy'], _from)
 
     # run the loop

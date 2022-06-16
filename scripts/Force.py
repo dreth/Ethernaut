@@ -1,5 +1,5 @@
-from scripts.context import *
-from scripts.account import _from, acc
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
 from brownie import Force, ForceAttack
 
 ##########################################
@@ -9,7 +9,7 @@ from brownie import Force, ForceAttack
 # solve the challenge
 def solve_challenge():
     # load challenge
-    force = load_challenge(contract_name=Force, instance_key='force')
+    force = load_challenge(ContractObject=Force, instance_key='force')
     forceattack = ForceAttack.deploy(_from)
 
     # send some funds to forceattack

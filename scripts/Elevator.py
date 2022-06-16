@@ -1,5 +1,5 @@
-from scripts.context import *
-from scripts.account import _from, acc
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
 from brownie import Elevator, Building
 
 ##########################################
@@ -9,7 +9,7 @@ from brownie import Elevator, Building
 # solve the challenge
 def solve_challenge():
     # load challenge
-    elevator = load_challenge(contract_name=Elevator, instance_key='elevator')
+    elevator = load_challenge(ContractObject=Elevator, instance_key='elevator')
     building = Building.deploy(elevator.address, _from)
 
     # go to floor the top floor which has to be different to the

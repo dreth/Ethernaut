@@ -1,5 +1,5 @@
-from scripts.context import *
-from scripts.account import _from, acc
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
 from brownie import Fallback
 
 ##########################################
@@ -12,7 +12,7 @@ from brownie import Fallback
 # solve the challenge
 def solve_challenge():
     # load challenge
-    fallback = load_challenge(contract_name=Fallback, instance_key='fallback')
+    fallback = load_challenge(ContractObject=Fallback, instance_key='fallback')
 
     # make a contribution of less than 0.001 ETH so that 
     # the contract can receive() amounts

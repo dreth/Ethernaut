@@ -61,6 +61,6 @@ EthernautInstances = {
 }
 
 # load challenge from instances
-def load_challenge(contract_name, instance_key):
+def load_challenge(ContractObject, instance_key):
     return contract_name.at(EthernautInstances[instance_key])
 

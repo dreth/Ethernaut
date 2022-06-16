@@ -1,6 +1,6 @@
-from scripts.context import *
-from scripts.account import _from, acc
-from scripts.web3 import web3
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
+from scripts.helper.web3 import web3
 from brownie import Privacy
 
 ##########################################
@@ -10,7 +10,7 @@ from brownie import Privacy
 # solve the challenge
 def solve_challenge():
     # load challenge
-    privacy = load_challenge(contract_name=Privacy, instance_key='privacy')
+    privacy = load_challenge(ContractObject=Privacy, instance_key='privacy')
 
     # get bytes32 object in storage position 0x5
     # that's where the third element of data is located (solidity is 0-index as nature was supposed to be)

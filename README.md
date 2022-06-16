@@ -31,7 +31,7 @@ from brownie import <contract_to_import>
 # solve the challenge
 def solve_challenge():
     # load challenge
-    <lowercase_contract_name> = load_challenge(contract_name=<contract_to_import>, instance_key='<contract_instance_key_from_EthernautInstances>')
+    <lowercase_contract_name> = load_challenge(ContractObject=<contract_to_import>, instance_key='<contract_instance_key_from_EthernautInstances>')
 
 def main():
     solve_challenge()
@@ -62,7 +62,7 @@ brownie run <script> --network rinkeby-fork
 
 ## My solutions
 
-For my solution reports/writeups are in the markdown documents under `/reports`. You can view whichever you want by clicking here:
+For my solution reports/writeups are in the markdown documents under `/reports`. You can view whichever you want by clicking on its name:
 
 1. [HelloEthernaut](https://github.com/dreth/Ethernaut/blob/main/reports/HelloEthernaut.md)
 2. [Fallback](https://github.com/dreth/Ethernaut/blob/main/reports/Fallback.md)

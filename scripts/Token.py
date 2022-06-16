@@ -1,5 +1,5 @@
-from scripts.context import *
-from scripts.account import _from, acc
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
 from brownie import Token
 
 ##########################################
@@ -12,7 +12,7 @@ from brownie import Token
 # solve the challenge
 def solve_challenge():
     # load challenge
-    token = load_challenge(contract_name=Token, instance_key='token')
+    token = load_challenge(ContractObject=Token, instance_key='token')
 
     # transfer lots of tokens to the contract deployer
     # who owns most of the token supply 

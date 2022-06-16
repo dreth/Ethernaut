@@ -1,6 +1,6 @@
-from scripts.context import *
-from scripts.account import _from, acc
-from scripts.web3 import web3
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
+from scripts.helper.web3 import web3
 from brownie import King, KingAttack
 
 ##########################################
@@ -14,7 +14,7 @@ from brownie import King, KingAttack
 # solve the challenge
 def solve_challenge():
     # load challenge
-    king = load_challenge(contract_name=King, instance_key='king')
+    king = load_challenge(ContractObject=King, instance_key='king')
     kingattack = KingAttack.deploy(EthernautInstances['king'], _from)
     
     # call becomeKing() in the attacking contract to make the contract address the king

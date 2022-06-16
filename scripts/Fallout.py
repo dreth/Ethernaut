@@ -1,5 +1,5 @@
-from scripts.context import *
-from scripts.account import _from, acc
+from scripts.helper.context import *
+from scripts.helper.account import _from, acc
 from brownie import Fallout
 
 ##########################################
@@ -11,7 +11,7 @@ from brownie import Fallout
 # solve the challenge
 def solve_challenge():
     # load challenge
-    fallout = load_challenge(contract_name=Fallout, instance_key='fallout')
+    fallout = load_challenge(ContractObject=Fallout, instance_key='fallout')
 
     # the Fal1out() function is not _really_ a constructor
     # if we call it with any value, we become owner
