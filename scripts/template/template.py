@@ -12,11 +12,13 @@ def deploy_locally(ContractObject, from_account, constructor_params={}):
 
 # solve the challenge
 def solve_challenge(locally=False):
-    if not locally == False:
-        # load challenge
+    # load challenge
+    if not locally:
         contract_name = load_challenge(ContractObject=ContractName, instance_key='contract_name')
     else:
         contract_name = deploy_locally(ContractObject=ContractName, from_account=_from)
+    
+
 
 def main():
     solve_challenge()
