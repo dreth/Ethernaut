@@ -1,14 +1,10 @@
-from scripts.helper.context import *
+from scripts.helper.utils import *
 from scripts.helper.account import _from, _from2, acc, acc2
 from brownie import NaughtCoin
 
 ##########################################
 # Goal of the exercise
 #########################################
-
-# test locally
-def deploy_locally(ContractObject, from_account, constructor_params={}):
-    return ContractObject.deploy(from_account, **constructor_params)
 
 # solve the challenge
 def solve_challenge(locally=False):

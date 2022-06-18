@@ -1,20 +1,18 @@
 from scripts.helper.utils import *
 from scripts.helper.account import _from, acc
-from brownie import ContractName
+from brownie import Recovery
 
 ##########################################
-# Goal of the exercise
+# This level will be completed if you can recover (or remove) the 0.001 ether from the lost contract address.
 #########################################
 
 # solve the challenge
 def solve_challenge(locally=False):
     # load challenge
     if not locally:
-        contract_name = load_challenge(ContractObject=ContractName, instance_key='contract_name')
+        recovery = load_challenge(ContractObject=Recovery, instance_key='recovery')
     else:
-        contract_name = deploy_locally(ContractObject=ContractName, from_account=_from)
-    
-
+        recovery = deploy_locally(ContractObject=Recovery, from_account=_from)
 
 def main():
     solve_challenge()

@@ -28,7 +28,7 @@ function becomeKing() external payable {
 Calling it in python, we get the value directly from the King contract's storage position 2, where the prize is located (located in position 2 because it is a uin256 which occupies a full slot and the first slot is occupied by an address, also 32 bytes).
 
 ```python
-kingattack.becomeKing({'value':int(web3.eth.getStorageAt(king.address, '0x01').hex(),16)} | _from)
+kingattack.becomeKing({'value':int(web3.eth.get_storage_at(king.address, '0x01').hex(),16)} | _from)
 ```
 
 Block explorer: https://rinkeby.etherscan.io/tx/0xcb97566e0e4fbd7658eb587ba7d7418d54ce86830542dd567c23f73cb1b46873

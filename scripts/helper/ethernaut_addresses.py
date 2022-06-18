@@ -60,6 +60,3 @@ EthernautInstances = {
     'doubleentrypoint':'0xd003ce349fCc0e44bd0a2CDdD949C83451be769c'
 }
 
-# load challenge from instances
-def load_challenge(ContractObject, instance_key):
-    return ContractObject.at(EthernautInstances[instance_key])

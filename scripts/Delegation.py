@@ -1,16 +1,20 @@
-from scripts.helper.context import *
-from scripts.helper.account import _from, acc
+from scripts.helper.utils import *
+from scripts.helper.account import _from, acc, _from2, acc2
 from scripts.helper.web3 import web3
-from brownie import Delegation
+from brownie import Delegation, Delegate
 
 ##########################################
 # The goal of this level is for you to claim ownership of the instance you are given.
 #########################################
 
 # solve the challenge
-def solve_challenge():
+def solve_challenge(locally=False):
     # load challenge
-    delegation = load_challenge(ContractObject=Delegation, instance_key='delegation')
+    if not locally:
+        delegation = load_challenge(ContractObject=Delegation, instance_key='delegation')
+    else:
+        delegate = deploy_locally(constructor_params=[acc2.address],ContractObject=Delegate, from_account=_from2)
+        delegation = deploy_locally(constructor_params=[delegate.address], ContractObject=Delegation, from_account=_from2)
 
     # get the first 4 bytes of the 'pwn()' function hash
     # in order to pass it through msg.data
@@ -28,5 +32,5 @@ def solve_challenge():
     return owner_assertion
 
 def main():
-    solve_challenge()
+    solve_challenge(locally=True)
 

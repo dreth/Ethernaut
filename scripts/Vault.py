@@ -1,4 +1,4 @@
-from scripts.helper.context import *
+from scripts.helper.utils import *
 from scripts.helper.account import _from, acc
 from scripts.helper.web3 import web3
 from brownie import Vault
@@ -14,7 +14,7 @@ def solve_challenge():
 
     # look at the contract storage's 2nd slot
     # to see the value of the 2nd state variable `password`
-    password = web3.eth.getStorageAt(EthernautInstances['vault'], '0x01')
+    password = web3.eth.get_storage_at(EthernautInstances['vault'], '0x01')
 
     # what is the password?
     print(web3.toText(password.hex()))

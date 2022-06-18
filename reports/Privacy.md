@@ -6,7 +6,7 @@ Unlock this contract to beat the level.
 
 ## Solution
 
-First, the data in the `data` variable must be retrieved. This can be done by extracting the data from the contract storage as it is on the blockchain. In brownie, this can be done using `web3.eth.getStorageAt()`, with the address of the contract in the first param and the direction of the contract storage slot to look into.
+First, the data in the `data` variable must be retrieved. This can be done by extracting the data from the contract storage as it is on the blockchain. In brownie, this can be done using `web3.eth.get_storage_at()`, with the address of the contract in the first param and the direction of the contract storage slot to look into.
 
 Each slot has a capacity of 32 bytes (256 bits), meaning that data types which actually fill up a 32 byte slot, are going to take up a whole slot, so the following ones roll over to the next slot. If a data type is declared as `uint256` or `bytes32`, it will always occupy a full storage slot, as these types are already 32 bytes in size. 
 
@@ -49,7 +49,7 @@ Exactly as I described in [solution](#solution):
 1. Get the first 16 bytes of the data in the 5th storage position of the contract instance.
 
 ```python
-data_2 = web3.toBytes(hexstr=web3.eth.getStorageAt(privacy.address, '0x5').hex())[0:16].hex()
+data_2 = web3.toBytes(hexstr=web3.eth.get_storage_at(privacy.address, '0x5').hex())[0:16].hex()
 ```
 
 2. Pass it to the `unlock()` function

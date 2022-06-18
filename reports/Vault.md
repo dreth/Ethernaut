@@ -10,10 +10,10 @@ Sensitive data like passwords are not safe to store on the blockchain. Even in p
 
 In this case, the state variables are stored in the contract storage, and because the variable `password` is a 32 byte piece of data, it will always fill an entire slot, making its position very predictable in the 2nd slot of the contract, as the 2nd state variable defined.
 
-In this case, we can easily use the function `getStorageAt()` on web3.py to see what the password is by looking up in the 2nd storage slot. Then we can optionally convert it to text to see what the password is. In this case, the password is:
+In this case, we can easily use the function `get_storage_at()` on web3.py to see what the password is by looking up in the 2nd storage slot. Then we can optionally convert it to text to see what the password is. In this case, the password is:
 
 ```python
->>> web3.toText(web3.eth.getStorageAt(vault.address, '0x01').hex())
+>>> web3.toText(web3.eth.get_storage_at(vault.address, '0x01').hex())
 'A very strong secret password :)'
 ```
 
@@ -22,7 +22,7 @@ In this case, we can easily use the function `getStorageAt()` on web3.py to see 
 1. Get the password from the contract's storage
 
 ```python
-password = web3.eth.getStorageAt(EthernautInstances['vault'], '0x01')
+password = web3.eth.get_storage_at(EthernautInstances['vault'], '0x01')
 ```
 
 2. Unlock the vault using the password

