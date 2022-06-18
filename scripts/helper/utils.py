@@ -1,4 +1,6 @@
 from scripts.helper.ethernaut_addresses import *
+import rlp
+from eth_utils import keccak, to_checksum_address, to_bytes
 
 # test locally
 def deploy_locally(ContractObject, from_account, constructor_params=[]):
@@ -19,3 +21,18 @@ def deploy_locally(ContractObject, from_account, constructor_params=[]):
 # load challenge from instances
 def load_challenge(ContractObject, instance_key):
     return ContractObject.at(EthernautInstances[instance_key])
+
+# compute address of a given contract to be deployed from
+# the deployer address + nonce, as stated in the Section 7 
+# of the Ethereum yellowpaper for contracts created using CREATE
+def mk_contract_address(sender: str, nonce: int) -> str:
+    """Create a contract address using eth-utils.
+    # Modified from Mikko Ohtamaa's original answer which was later
+    # edited by Utgarda
+    # Obtained from https://ethereum.stackexchange.com/questions/760/how-is-the-address-of-an-ethereum-contract-computed
+    """
+    sender_bytes = to_bytes(hexstr=sender)
+    raw = rlp.encode([sender_bytes, nonce])
+    h = keccak(raw)
+    address_bytes = h[12:]
+    return to_checksum_address(address_bytes)
