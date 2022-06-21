@@ -23,7 +23,7 @@ $$2^{256} - int(0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0c
 In Python (for example):
 
 ```python
-2**256 -  int(web3.sha3(hexstr=f'0x{"0"*65}1').hex(),16)
+2**256 -  int(web3.sha3(hexstr=f'0x{"0"*63}1').hex(),16)
 ```
 
 Which returns the hash: `0x4ef1d2ad89edf8c4d91132028e8195cdf30bb4b5053d4f8cd260341d4805f30a`
