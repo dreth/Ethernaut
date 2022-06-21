@@ -7,7 +7,7 @@ In this repo I will write all the solutions to the [Ethernaut CTF](https://ether
 1. Install relevant libraries
 
 ```
-pip install eth-brownie rlp eth-utils
+pip install eth-brownie rlp eth-utils eth_abi
 ```
 
 2. Get a new instance of every single challenge by going on the ethernaut site and clicking on `Get new instance` for every chapter.

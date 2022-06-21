@@ -66,6 +66,13 @@ aliencodex.revise(owner_hash, acc.address, _from)
 
 Block explorer: https://rinkeby.etherscan.io/tx/0x12237e71e4fe8c6dcb94a3b3dea913d30fc8c99cc96faa890bb5bb3e1bdcb7da
 
+5. Confirm that my address is indeed the new owner
+
+```python
+owner_assertion = aliencodex.owner() == acc.address
+print(f"Address {acc.address} is the owner of the contract: {owner_assertion}")
+```
+
 ### Submission transaction
 
 Block explorer: https://rinkeby.etherscan.io/tx/0x5aeb0a8299d1b6000a56b6952b15f88f9571781402a839b483cab48f37749998
