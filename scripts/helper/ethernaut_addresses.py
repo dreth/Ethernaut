@@ -57,6 +57,6 @@ EthernautInstances = {
     'dex2':'0x7946702447eb202d15B3E79A2D0dEd5cD79B8a4E',
     'puzzlewallet':'0xd6D5D16049585bBfAFc1d7Dd2BAb7B7ed06D55ae',
     'motorbike':'0x14F151EC7e44DA6CcE6193cC35ABF4BE93753bdD',
-    'doubleentrypoint':'0xd003ce349fCc0e44bd0a2CDdD949C83451be769c'
+    'doubleentrypoint':'0x685cFd76cFE003656FaC6004fa01005D7FB4e455'
 }
 
