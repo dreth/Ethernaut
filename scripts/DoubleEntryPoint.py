@@ -18,7 +18,7 @@ def solve_challenge(locally=False):
     # get cryptovault address
     cryptovault_address = dep.cryptoVault()
 
-    # attack the contract
+    # instantiate the cryptovault contract
     cryptovault = CryptoVault.at(cryptovault_address)
 
     # deploy and set the bot

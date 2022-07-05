@@ -15,8 +15,14 @@ contract DetectionBot is IDetectionBot {
     function handleTransaction(address user, bytes calldata) public override {
         uint dataValue;
         uint calldataloadPos = 4;
+        uint _calldatasize;
 
-        while (true) {
+        // get calldata size (in bytes) so the loop ends where the data ends
+        assembly {
+            _calldatasize := calldatasize()
+        }
+
+        while (calldataloadPos < _calldatasize) {
             // obtain the next 32-byte item from the calldata
             assembly {
                 dataValue := calldataload(calldataloadPos)
