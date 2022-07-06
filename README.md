@@ -97,7 +97,7 @@ I have also added a small template for scripts, reports and attacker/interaction
 
 ## My solutions
 
-For my solution reports/writeups are in the markdown documents under `/reports`. You can view whichever you want by clicking on its name:
+All my solutions are layed out in [this article](https://dac.ac/blog/ethernaut_solutions/) on my blog, however, you can also see the solutions here on github in the markdown documents under `/reports`. You can view whichever you want by clicking on its name:
 
 1. [HelloEthernaut](https://github.com/dreth/Ethernaut/blob/main/reports/HelloEthernaut.md)
 2. [Fallback](https://github.com/dreth/Ethernaut/blob/main/reports/Fallback.md)
