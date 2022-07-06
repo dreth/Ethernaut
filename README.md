@@ -12,7 +12,9 @@ pip install eth-brownie rlp eth-utils eth_abi
 
 2. Get a new instance of every single challenge by going on the ethernaut site and clicking on `Get new instance` for every chapter.
 
-3. Copy the address for every single one of my instances and save them in a script within `/scripts` called `context.py`. All are in a dictionary for easier identification of each contract/instance. The script also contains a dictionary called `EthernautContractAddresses` with all the addresses for the contracts as they were deployed when I started the challenge (7th June, 2022). If you want to use my setup, you'll need to change the `EthernautInstances` and add your instances there, the `EthernautContractAddresses` variable can be deleted.
+3. Copy the address for every single one of my instances and save them in a script within `/scripts` called `context.py`. All are in a dictionary for easier identification of each contract/instance. The script also contains a dictionary called `EthernautContractAddresses` with all the addresses for the contracts as they were deployed when I started the challenge (7th June, 2022). If you want to use my setup, you'll need to change the `EthernautInstances` and add your instances there, the `EthernautContractAddresses` variable can be deleted. 
+
+If you want to use the factory contracts (contracts that create your instance of each challenge), then modify the values in `EthernautContractAddresses`. I have not included the factory contracts because I didn't really need them, for my purposes, everything could be tested by just running scripts in a local fork of the rinkeby test network, if you want to do this, you'll have to change my setup somewhat significantly.
 
 4. Add an account to brownie using the CLI: 
 
@@ -53,6 +55,8 @@ Modify the variables at the start of `solve_challenge()` accordingly:
 
 * `'contract_name'`: key of the contract address as present in `/scripts/helper/ethernaut_addresses.py`
 
+If you want to play around in your local development blockchain, then just pass `locally=True` to `solve_challenge()` under `main()` and make sure to run the script passing `development` under the network flag, like this:  `brownie run ScriptName --network development`, where `ScriptName` is the name of the script you're running. 
+
 
 7. Run everything in a forked rinkeby testnet local network, first add the network. Optionally use a specific block:
 
@@ -75,6 +79,21 @@ brownie run <script> --network rinkeby
 ```
 
 **NOTE: [The Rinkeby test network is deprecated](https://ethereum.org/en/developers/docs/networks/#rinkeby) in favor of the Sepolia/Görli testnet. There's a high chance that after Rinkeby has been deprecated, OpenZeppelin will deploy Ethernaut in the Sepolia or Görli testnet.** As a result of this, you should keep in mind that steps 7-9 of my setup will be on a different testnet.
+
+## Helper scripts
+
+Under `/scripts/helper` I have included a few convenience scripts that I imported in every single script (as needed), some were _always_ needed, like the Ethernaut instance addresses or my account import. 
+
+The helper scripts are:
+
+- `account.py`: imports the account to be used to solve the challenges, the actual account that I use to deploy/submit my instances
+- `ethernaut_addresses.py`: contains all the instance and contract addresses
+- `utils.py`: contains some basic functions that I use in each script. I always do a full import of everything in this script because here I defined the `load_challenge()` function which loads the instance of each challenge.
+- `web3.py`: contains an instance of web3 which I use for whatever utility from the web3.py library that I might need
+
+## Templates
+
+I have also added a small template for scripts, reports and attacker/interaction contracts I might need. They're under the `template` folder of `reports`, `contracts` and `scripts`.
 
 ## My solutions
 
