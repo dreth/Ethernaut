@@ -67,7 +67,7 @@ There are probably more ways, but I'm not familiar with them.
 
 The contract looks like this (It's under `/contracts/attacks/MagicNumberSolver.Yul` in the repo):
 
-```Yul
+```cs
 // SPDX-License-Identifier: MIT
 object "MagicNumberSolver" {
     code {
@@ -88,7 +88,7 @@ This is a _million times_ more readable than raw bytecode or even raw opcodes, t
 
 This is the constructor of the contract (initialization opcodes), usually declared with `constructor()` in Solidity:
 
-```Yul
+```cs
 code {
     sstore(0, caller())
     datacopy(0, dataoffset("Runtime"), datasize("Runtime"))
