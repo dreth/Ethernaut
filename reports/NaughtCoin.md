@@ -14,13 +14,13 @@ In two steps:
 
 1. Call `approve()` as follows:
 
-```cs
+```js
 approve(Account2Address, Account1Balance)
 ```
 
 2. Call `transferFrom()` as follows:
 
-```cs
+```js
 transferFrom(Account1Address, Account2Address, Account1Balance)
 ```
 

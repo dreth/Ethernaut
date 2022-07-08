@@ -49,7 +49,7 @@ forta = Forta.at(dep.forta())
 
 That said, I coded the `handleTransaction()` function as follows:
 
-```cs
+```js
 function handleTransaction(address user, bytes calldata) public override {
     uint dataValue;
     uint calldataloadPos = 4;

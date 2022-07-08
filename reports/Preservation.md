@@ -12,7 +12,7 @@ When we modify the variable `storedTime` through a `delegatecall` of the `setTim
 
 Therefore, calling either `setFirstTime()` or `setSecondTime()` will modify `timeZone1Library` with whatever value we pass as `_timeStamp`. Therefore, in order to exploit the contract and become `owner`, we need to deploy a contract with the _same storage layout as Preservation_, this means that our attacker contract should define:
 
-```cs
+```js
 address public timeZone1Library;
 address public timeZone2Library;
 address public owner; 
@@ -24,7 +24,7 @@ Also, there must be two additional functions defined in the attacker contract:
 
 * A function `setTime()` that takes a `uint256` parameter, which will, in the case of the attacker contract, modify the variable in its _3rd memory slot_, so `owner`. The name of this variable is not relevant, since we're only interested in modifying the 3rd memory slot in Preservation, but for consistency's purposes, I also named it `owner`.
 
-```cs
+```js
 function setTime(uint256) public {
     owner = tx.origin;
 }
@@ -32,7 +32,7 @@ function setTime(uint256) public {
 
 * A function where `setFirstTime()` is called in Preservation in order to make `timeZone1Library` the attacker contract. If each LibraryContract was _correctly coded_ with an identical layout to Preservation, the Preservation contract wouldn't be vulnerable in this way.
 
-```cs
+```js
 function setFirstTimeExploit() external {
     preservationContract.setFirstTime(uint256(address(this)));
 }

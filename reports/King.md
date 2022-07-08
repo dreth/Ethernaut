@@ -18,7 +18,7 @@ kingattack = KingAttack.deploy(EthernautInstances['king'], _from)
 
 2. Call the `becomeKing()` function, while sending enough funds to take over the contract (1e15 wei = 0.001 ether) defined in the contract as follows:
 
-```cs
+```js
 function becomeKing() external payable {
     (bool success,) = address(kingContract).call{value: msg.value}("");
     require(success, "Transfer failed.");

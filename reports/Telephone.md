@@ -8,7 +8,7 @@ Claim ownership of the contract to complete this level.
 
 The function `changeOwner()` compares whether the address that sends the tx (`tx.origin`) is the same as the address that interacts with the contract (`msg.sender`). In this case it isn't, so the owner is changed as per the function's instructions:
 
-```cs
+```js
 function changeOwner(address _owner) public {
     if (tx.origin != msg.sender) {
         owner = _owner;
@@ -22,7 +22,7 @@ Therefore, the only thing needed here is a attacking contract which interacts wi
 
 1. I deployed the contract `TelephoneAttack` (at: `0x756a2E146F4f9659E7c16a90948A09aB09925F19`) which interfaces with the original Telephone contract and calls its `changeOwner()` function as follows:
 
-```cs
+```js
 function callChangeOwner(address _newOwner) external {
     telephoneContract.changeOwner(_newOwner);
 }

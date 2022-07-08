@@ -8,7 +8,7 @@ You need to drain all balances of token1 and token2 from the DexTwo contract to 
 
 The DexTwo problem suffers from a different problem to the Dex problem. In this case, there is no require statement checking whether the two token contract addresses being swapped actually match the two token contract addresses for which the pool is designed. As correctly defined in the Dex contract, this line is missing:
 
-```cs
+```js
 require((from == token1 && to == token2) || (from == token2 && to == token1), "Invalid tokens");
 ```
 

@@ -14,7 +14,7 @@ All we have to do is make sure the function `price()` returns 100 when `isSold` 
 
 1. Code and deploy a Buyer contract (at: `0xB9dcacbc393D15fEa292705d66c1549035CcB3ee`) where I define the `price()` function as follows:
 
-```cs
+```js
 function price() public view returns (uint256) {
     if (shopContract.isSold()) {
         return 1;

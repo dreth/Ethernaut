@@ -42,7 +42,7 @@ Block explorer: https://rinkeby.etherscan.io/tx/0x79c0e38730d584e33f5e291452c09a
 
 3. Deploy a BombEngine contract (at: `0x89a05702875f0c18FF5B28640ea3DdE39FDe6E47`) with only a single function that can self destruct such contract
 
-```cs
+```js
 function boom() public {
     selfdestruct(address(0));
 }

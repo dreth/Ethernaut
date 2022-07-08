@@ -14,7 +14,7 @@ In the case of the Privacy contract, we know that the relevant piece of data is 
 
 This contract's state variables are, in order:
 
-```cs
+```js
 bool public locked = true;
 uint256 public ID = block.timestamp;
 uint8 private flattening = 10;

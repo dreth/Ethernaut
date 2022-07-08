@@ -10,7 +10,7 @@ You are given 20 tokens to start with and you will beat the level if you somehow
 
 This contract is using the solidity compiler version 0.6.0, therefore mathematical operations can lead to overflows. In this case, the vulnerability occurs when attempting to call the `transfer()` function:
 
-```cs
+```js
 function transfer(address _to, uint _value) public returns (bool) {
     require(balances[msg.sender] - _value >= 0);
     balances[msg.sender] -= _value;
@@ -23,13 +23,13 @@ The line `require(balances[msg.sender] - _value >= 0);` checks if the user balan
 
 After passing the require statement, there is another mistake where this overflowed value is assigned to the balance of `msg.sender`:
 
-```cs
+```js
 balances[msg.sender] -= _value;
 ```
 
 All we have to do to exploit the contract is call the transfer function as follows:
 
-```cs
+```js
 transfer('any address except the sending address', 21)
 ```
 
@@ -39,7 +39,7 @@ From the address whose funds we want to cause the overflow on.
 
 1. I called the `transfer()` function and sent 21 tokens (1 more than the original 20 to cause an overflow) to the contract address of the Token contract.
 
-```cs
+```js
 token.transfer(EthernautContractAddresses['token'], 21, _from)
 ```
 

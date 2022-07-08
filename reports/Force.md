@@ -26,7 +26,7 @@ forceattack = ForceAttack.deploy(_from)
 
 And make sure the contract can receive funds and also has a function that calls `selfdestruct()` to the contract address of our instance:
 
-```cs
+```js
 function reload() external payable {}
 
 function forceEtherIntoAddress(address payable _to) external onlyOwner {

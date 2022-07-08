@@ -12,7 +12,7 @@ This contract has 3 modifiers that must be passed in order to make `entrant` the
    
 2. The remaining gas (`gasleft()`) after the code as ran has to be a multiple of 8191. This can be done my performing an external call to the GatekeeperOne contract where we run the `enter()` function and additionally send both the gas needed to perform the instructions *and* a multiple of 8191. I coded it as follows:
 
-```cs
+```js
 (success,) = address(gko).call{
             gas: additionalGas + 10*8191
         }(abi.encodeWithSignature(
@@ -45,7 +45,7 @@ The function takes a parameter `address` and then casts it into `uint64` and the
 
 The second parameter will be a number, it can be a `uint16` as we will deal with small values. This number will be the amount of gas that will be used by instructions in the Gatekeeper One contract call. A multiple of 8191 has to be added to this message call to the amount of additional gas passed through `additionalGas` in order to pass the 2nd check.
 
-```cs
+```js
 function callEnter(address _modifiedTxOrigin, uint16 additionalGas) public returns (bool) {
     // modified tx origin is tx origin with tweaks to pass the require statements in `enter()`
     bytes8 _modifiedTxOriginBytes = bytes8(uint64(_modifiedTxOrigin));
@@ -93,7 +93,7 @@ Block explorer: https://rinkeby.etherscan.io/tx/0x669160ac98274574e76bbe0128e17e
 
 4. Check if we are `entrant`
 
-```cs
+```js
 entrant_assertion = gatekeeper.entrant() == acc.address
 print(f"Address is entrant: {entrant_assertion}")
 ```

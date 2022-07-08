@@ -18,13 +18,13 @@ The checks are as follows:
 
 3. The bitwise `XOR` and each element operated through it is its own inverse, so if we have that if:
 
-```cs
+```js
 uint64(bytes8(keccak256(abi.encodePacked(msg.sender)))) ^ uint64(_gateKey) == uint64(0) - 1
 ```
 
 Is true, then:
 
-```cs
+```js
 uint64(bytes8(keccak256(abi.encodePacked(msg.sender)))) ^ uint64(0) - 1 == uint64(_gateKey)
 ```
 
@@ -34,7 +34,7 @@ is also true. Therefore, _we don't need `_gateKey`_, we can simply pass the resu
 
 1. Code an attacker contract where we I define the contract constructor as follows:
 
-```cs
+```js
 constructor(address _instance) public {
     bytes8 gateKey = bytes8(uint64(bytes8(keccak256(abi.encodePacked(address(this))))) ^ (uint64(0) - 1));
 
