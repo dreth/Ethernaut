@@ -1,6 +1,6 @@
 # Ethernaut solutions
 
-In this repo I will write all the solutions to the [Ethernaut CTF](https://ethernaut.openzeppelin.com/). I solved the challenges locally using brownie. Then did it on chain through brownie using the rinkeby network through the Alchemy api.
+In this repo I will write all the solutions to the [Ethernaut CTF](https://ethernaut.openzeppelin.com/). I solved the challenges locally using brownie. Then did it on chain on brownie on the rinkeby test network through the Infura API. To fork rinkeby I used the Alchemy API.
 
 ## My local environment setup
 
