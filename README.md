@@ -10,7 +10,7 @@ In this repo I will write all the solutions to the [Ethernaut CTF](https://ether
 pip install eth-brownie rlp eth-utils eth_abi
 ```
 
-2. Get a new instance of every single challenge by going on the ethernaut site and clicking on `Get new instance` for every chapter.
+2. Get a new instance of every challenge by going on the ethernaut site and clicking on `Get new instance` for every chapter.
 
 3. Copy the address for every single one of my instances and save them in a script within `/scripts` called `context.py`. All are in a dictionary for easier identification of each contract/instance. The script also contains a dictionary called `EthernautContractAddresses` with all the addresses for the contracts as they were deployed when I started the challenge (7th June, 2022). If you want to use my setup, you'll need to change the `EthernautInstances` and add your instances there, the `EthernautContractAddresses` variable can be deleted. 
 
