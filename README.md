@@ -82,7 +82,7 @@ brownie run <script> --network rinkeby
 
 ## Helper scripts
 
-Under `/scripts/helper` I have included a few convenience scripts that I imported in every single script (as needed), some were _always_ needed, like the Ethernaut instance addresses or my account import. 
+Under `/scripts/helper` I have included a few convenience scripts that I imported in every script (as needed), some were _always_ needed, like the Ethernaut instance addresses or my account import. 
 
 The helper scripts are:
 
