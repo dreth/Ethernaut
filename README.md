@@ -4,6 +4,12 @@ In this repo I will write all the solutions to the [Ethernaut CTF](https://ether
 
 ## My local environment setup
 
+If you'll use my same setup, you can run `start_over.sh` to clean up my answers:
+
+```shell
+bash start_over.sh
+```
+
 1. Install relevant libraries
 
 ```
